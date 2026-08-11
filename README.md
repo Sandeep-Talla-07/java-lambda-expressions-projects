@@ -1,93 +1,516 @@
-# java-lambda-expressions-projects
+# Java Lambda Expressions Projects
 
+A collection of Java projects created to learn and practice Lambda Expressions and Functional Programming in Java.
 
+The projects start from basic lambda expressions and gradually move toward practical usage of Java's built-in functional interfaces and method references.
 
-## Getting started
+---
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+## Projects
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+| #   | Project                    | Main Concepts                                   |
+| --- | -------------------------- | ----------------------------------------------- |
+| 01  | Age Eligibility Checker    | Functional Interface, Lambda Expression         |
+| 02  | Lambda Calculator          | Functional Interface, Function, Lambda          |
+| 03  | Student Result System      | Predicate, Function, Lambda                     |
+| 04  | Hotel Filtering System     | Predicate, Lambda Expression                    |
+| 05  | Employee Management System | Predicate, Function, Consumer                   |
+| 06  | Product Management System  | Predicate, Function, Consumer, Method Reference |
+| 07  | Employee Payroll System    | Predicate, Function, Consumer, Method Reference |
 
-## Add your files
+---
 
-* [Create](https://docs.gitlab.com/user/project/repository/web_editor/#create-a-file) or [upload](https://docs.gitlab.com/user/project/repository/web_editor/#upload-a-file) files
-* [Add files using the command line](https://docs.gitlab.com/topics/git/add_files/#add-files-to-a-git-repository) or push an existing Git repository with the following command:
+## 01. Age Eligibility Checker
 
+### Description
+
+A simple project that checks whether a person is eligible based on their age.
+
+This project demonstrates how a custom functional interface can be used with a lambda expression.
+
+### Concepts Used
+
+- Functional Interface
+- Lambda Expression
+- Passing behavior as an argument
+- Boolean conditions
+
+### Example
+
+```java
+AgeChecker checker = age -> age >= 18;
 ```
-cd existing_repo
-git remote add origin https://gitlab.com/sandeep.10/java-lambda-expressions-projects.git
-git branch -M main
-git push -uf origin main
+
+---
+
+## 02. Lambda Calculator
+
+### Description
+
+A simple calculator that performs arithmetic operations using Lambda Expressions.
+
+### Operations
+
+- Addition
+- Subtraction
+- Multiplication
+- Division
+
+### Concepts Used
+
+- Functional Interface
+- Lambda Expression
+- Built-in Functional Interfaces
+- Passing behavior as an argument
+
+### Example
+
+```java
+Function<Integer, Integer> square = number -> number * number;
 ```
 
-## Integrate with your tools
+---
 
-* [Set up project integrations](https://gitlab.com/sandeep.10/java-lambda-expressions-projects/-/settings/integrations)
+## 03. Student Result System
 
-## Collaborate with your team
+### Description
 
-* [Invite team members and collaborators](https://docs.gitlab.com/user/project/members/)
-* [Create a new merge request](https://docs.gitlab.com/user/project/merge_requests/creating_merge_requests/)
-* [Automatically close issues from merge requests](https://docs.gitlab.com/user/project/issues/managing_issues/#closing-issues-automatically)
-* [Enable merge request approvals](https://docs.gitlab.com/user/project/merge_requests/approvals/)
-* [Set auto-merge](https://docs.gitlab.com/user/project/merge_requests/auto_merge/)
+A student result management project that uses Lambda Expressions to filter and process student information.
 
-## Test and Deploy
+The project demonstrates how functional interfaces can be used with collections.
 
-Use the built-in continuous integration in GitLab.
+### Concepts Used
 
-* [Get started with GitLab CI/CD](https://docs.gitlab.com/ci/quick_start/)
-* [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/user/application_security/sast/)
-* [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/topics/autodevops/requirements/)
-* [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/user/clusters/agent/)
-* [Set up protected environments](https://docs.gitlab.com/ci/environments/protected_environments/)
+- Lambda Expressions
+- Predicate
+- Function
+- Collection processing
+- Object filtering
 
-***
+### Example
 
-# Editing this README
+```java
+Predicate<Student> passed = student -> student.getMarks() >= 40;
+```
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+---
 
-## Suggestions for a good README
+## 04. Hotel Filtering System
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+### Description
 
-## Name
-Choose a self-explaining name for your project.
+A hotel filtering system that filters hotels based on different conditions such as price and hotel type.
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+Instead of creating separate classes for every filtering condition, Lambda Expressions are used to provide the filtering logic.
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+### Concepts Used
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+- Functional Interface
+- Lambda Expression
+- Predicate
+- Object filtering
+- Passing behavior as an argument
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+### Example
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+```java
+Predicate<Hotel> affordable = hotel -> hotel.getPricePerNight() <= 2000;
+```
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+---
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+## 05. Employee Management System
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+### Description
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+An employee management system that performs different operations on a collection of employees using Java's built-in functional interfaces.
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+### Operations
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+- Filter employees
+- Find employees based on conditions
+- Process employee information
+- Display employee information
 
-## License
-For open source projects, say how it is licensed.
+### Concepts Used
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+- Predicate
+- Function
+- Consumer
+- Lambda Expressions
+- Method References
+- Collections
+
+### Example
+
+```java
+Predicate<Employee> developmentEmployee =
+    employee -> employee.getDepartment().equals("Development");
+```
+
+---
+
+## 06. Product Management System
+
+### Description
+
+A product management system that demonstrates how Lambda Expressions and Method References can be used to process product information.
+
+### Operations
+
+- Filter products
+- Find products based on price
+- Process product information
+- Display product information
+
+### Concepts Used
+
+- Predicate
+- Function
+- Consumer
+- Lambda Expressions
+- Method References
+- Built-in Functional Interfaces
+
+### Example
+
+```java
+Predicate<Product> expensiveProduct = product -> product.getPrice() > 1000;
+```
+
+---
+
+## 07. Employee Payroll System
+
+### Description
+
+An employee payroll system that demonstrates practical usage of Lambda Expressions and Java Method References.
+
+The system works with employee information such as:
+
+- Employee ID
+- Employee Name
+- Salary
+- Department
+
+### Operations
+
+- Display employees
+- Filter employees by department
+- Process employee salaries
+- Calculate employee bonuses
+- Generate employee codes
+- Use Predicate
+- Use Function
+- Use Consumer
+- Use Method References
+- Use Function Composition
+
+### Concepts Used
+
+- Lambda Expressions
+- Predicate
+- Function
+- Consumer
+- BiFunction
+- Static Method References
+- Instance Method References
+- Function Composition
+- andThen()
+
+### Example
+
+```java
+Function<Employee, Double> getSalary = Employee::getSalary;
+```
+
+---
+
+## Java Lambda Concepts Practiced
+
+### 1. Lambda Expression
+
+A Lambda Expression provides a short way to implement a Functional Interface.
+
+```java
+(a, b) -> a + b
+```
+
+Instead of creating a separate implementation class, the behavior can be written directly.
+
+### 2. Functional Interface
+
+A Functional Interface contains exactly one abstract method.
+
+```java
+@FunctionalInterface
+interface Calculator {
+    int calculate(int a, int b);
+}
+```
+
+It can then be implemented using a Lambda:
+
+```java
+Calculator addition = (a, b) -> a + b;
+```
+
+### 3. Predicate
+
+`Predicate<T>` is used when the result should be true or false.
+
+```java
+Predicate<Employee> highSalary = employee -> employee.getSalary() > 50000;
+```
+
+Example:
+
+```java
+if (highSalary.test(employee)) {
+    System.out.println(employee);
+}
+```
+
+### 4. Function
+
+`Function<T, R>` takes one value and returns another value.
+
+```java
+Function<Employee, Double> getSalary = Employee::getSalary;
+```
+
+Example:
+
+```java
+double salary = getSalary.apply(employee);
+```
+
+### 5. Consumer
+
+`Consumer<T>` accepts a value but does not return anything.
+
+```java
+Consumer<Employee> display = employee -> System.out.println(employee);
+```
+
+Example:
+
+```java
+display.accept(employee);
+```
+
+### 6. Supplier
+
+`Supplier<T>` does not take an input but returns a value.
+
+```java
+Supplier<String> message = () -> "Welcome to Employee Payroll System";
+```
+
+Example:
+
+```java
+System.out.println(message.get());
+```
+
+---
+
+## Method References
+
+Method References provide a shorter syntax for certain Lambda Expressions.
+
+| Lambda                             | Method Reference      |
+| ---------------------------------- | --------------------- |
+| `employee -> employee.getSalary()` | `Employee::getSalary` |
+| `employee -> employee.display()`   | `Employee::display`   |
+
+### Static Method Reference
+
+A static method can also be referenced directly.
+
+```java
+public static double calculateBonus(double salary) {
+    return salary * 0.10;
+}
+```
+
+Method reference:
+
+```java
+Function<Double, Double> calculateBonus = Employee::calculateBonus;
+```
+
+### Instance Method Reference
+
+An instance method can be referenced through its class.
+
+```java
+Function<Employee, Double> getSalary = Employee::getSalary;
+```
+
+This is equivalent to:
+
+```java
+Function<Employee, Double> getSalary = employee -> employee.getSalary();
+```
+
+---
+
+## Function Composition
+
+Functions can be combined using methods such as `andThen()`.
+
+```java
+Function<Employee, String> getName = Employee::getName;
+
+Function<String, String> addMessage = name -> "Employee: " + name;
+
+Function<Employee, String> result = getName.andThen(addMessage);
+```
+
+Flow:
+
+```text
+Employee -> getName() -> String -> addMessage() -> String
+```
+
+---
+
+## Repository Structure
+
+```text
+Lambda Projects/
+│
+├── 01-Age-Eligibility-Checker/
+│   └── src
+│
+├── 02-Lambda-Calculator/
+│   └── src
+│
+├── 03-Student-Result-System/
+│   └── src
+│
+├── 04-Hotel-Filtering-System/
+│   └── src
+│
+├── 05-Employee-Management/
+│   └── src
+│
+├── 06-Product-Management-System/
+│   └── src
+│
+├── 07-Employee-Payroll-System/
+│   └── src
+│
+└── README.md
+```
+
+---
+
+## Learning Progression
+
+The projects are designed to gradually increase in difficulty.
+
+```text
+Custom Functional Interface
+      ↓
+Lambda Expression
+      ↓
+Passing Behavior as Argument
+      ↓
+Built-in Functional Interfaces
+      ↓
+Predicate
+      ↓
+Function
+      ↓
+Consumer
+      ↓
+Supplier
+      ↓
+Method References
+      ↓
+Static Method References
+      ↓
+Instance Method References
+      ↓
+Function Composition
+      ↓
+Practical Object Processing
+```
+
+---
+
+## Learning Goals
+
+The main goal of this repository is to understand:
+
+- Why Lambda Expressions were introduced
+- How Lambda Expressions reduce boilerplate code
+- How behavior can be passed as an argument
+- How Functional Interfaces work
+- How Java's built-in Functional Interfaces work
+- How to use Predicate
+- How to use Function
+- How to use Consumer
+- How to use Supplier
+- How Method References work
+- How Static Method References work
+- How Instance Method References work
+- How Function Composition works
+- How Lambda Expressions can be applied to real-world problems
+
+---
+
+## Technologies Used
+
+- Java
+- Java Collections Framework
+- Lambda Expressions
+- Functional Interfaces
+- Predicate
+- Function
+- Consumer
+- Supplier
+- BiFunction
+- Method References
+- Function Composition
+- Java 8+ Functional Programming Features
+
+---
+
+## Next Step
+
+After completing these Lambda Expression projects, the next major topic is the Java Stream API.
+
+The Lambda Expressions learned in these projects will be heavily used with Streams.
+
+Important Stream operations to learn:
+
+- filter()
+- map()
+- forEach()
+- sorted()
+- reduce()
+- collect()
+- groupingBy()
+- counting()
+- distinct()
+- limit()
+- skip()
+
+---
+
+## Author
+
+**Sandeep**
+
+Java | DSA | Backend Development | Functional Programming
+
+---
+
+## Repository Goal
+
+This repository represents a practical learning journey through Java Lambda Expressions.
+
+The projects progress from basic Lambda Expressions and Functional Interfaces to more advanced concepts such as Method References, Function Composition, and practical object processing.
